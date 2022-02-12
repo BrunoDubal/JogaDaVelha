@@ -26,21 +26,7 @@ def tabela():
 
 tabela()
     
-    
-while True:
-    print()
-    jogador = str(input('Escolha um jogador: \n[X] ou [O] --> ')).strip().upper()
-    if jogador == 'X' or jogador == 'O':
-        break
-    else:
-        print('Opção invalida! Tente digitar Circulo ou O.')
-
-
-cont_jogador = 0
-if jogador == 'X':
-    cont_jogador = 1
-else:
-    cont_jogador = 2
+cont_jogador = 1
 
 bot = int(input('''Gostaria de jogar contra um Bot? 
 [1]SIM
@@ -82,35 +68,74 @@ while True:
         break
 
 
-    if cont_jogador == 1:
-        try:
-            while True:
-                print(f'Faça sua jogada com {jogador} ')
-                l = int(input('Digite a linha: '))
-                c = int(input('Digite a coluna: '))
-                if ' ' in layout[l-1][c-1]:
-                    layout[l-1][c-1] = jogador
-                    tabela()
-                    cont_jogador = 2
-                    break
-                else:
-                    print('Campo ja contem uma jogada. Tente outro campo.')
-        except:
-            print('Opção invalida. Por favor tente novamente')
+    if bot == 1:
+        if cont_jogador == 1:
+            jogador = 'X'
+            try:
+                while True:
+                    print(f'Faça sua jogada com {jogador} ')
+                    l = int(input('Digite a linha: '))
+                    c = int(input('Digite a coluna: '))
+                    if ' ' in layout[l-1][c-1]:
+                        layout[l-1][c-1] = jogador
+                        tabela()
+                        print('\n\n\n')
+                        cont_jogador = 2
+                        break
+                    else:
+                        print('Campo ja contem uma jogada. Tente outro campo.')
+            except:
+                print('Opção invalida. Por favor tente novamente')
 
 
-    elif cont_jogador == 2:
-        try:
-            while True:
-                print(f'Faça sua jogada com {jogador} ')
-                l = int(input('Digite a linha: '))
-                c = int(input('Digite a coluna: '))
-                if ' ' in layout[l-1][c-1]:
-                    layout[l-1][c-1] = jogador
-                    tabela()
-                    cont_jogador = 1
-                    break
-                else:
-                    print('Campo ja contem uma jogada. Tente outro campo.')
-        except:
-            print('Opção invalida. Por favor tente novamente.')
+        elif cont_jogador == 2:
+            jogador = 'O'
+            try:
+                while True:
+                    l = int(randint(0,2))
+                    c = int(randint(0,2))
+                    if ' ' in layout[l][c]:
+                        layout[l][c] = jogador
+                        tabela()
+                        print('\n')
+                        cont_jogador = 1
+                        break
+            except:
+                print('Opção invalida. Por favor tente novamente.')
+    
+    
+    else:
+        if cont_jogador == 1:
+            jogador = 'X'
+            try:
+                while True:
+                    print(f'Faça sua jogada com {jogador} ')
+                    l = int(input('Digite a linha: '))
+                    c = int(input('Digite a coluna: '))
+                    if ' ' in layout[l-1][c-1]:
+                        layout[l-1][c-1] = jogador
+                        tabela()
+                        cont_jogador = 2
+                        break
+                    else:
+                        print('Campo ja contem uma jogada. Tente outro campo.')
+            except:
+                print('Opção invalida. Por favor tente novamente')
+
+
+        elif cont_jogador == 2:
+            jogador = 'O'
+            try:
+                while True:
+                    print(f'Faça sua jogada com {jogador} ')
+                    l = int(input('Digite a linha: '))
+                    c = int(input('Digite a coluna: '))
+                    if ' ' in layout[l-1][c-1]:
+                        layout[l-1][c-1] = jogador
+                        tabela()
+                        cont_jogador = 1
+                        break
+                    else:
+                        print('Campo ja contem uma jogada. Tente outro campo.')
+            except:
+                print('Opção invalida. Por favor tente novamente.')
