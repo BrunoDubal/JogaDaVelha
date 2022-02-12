@@ -32,7 +32,7 @@ bot = int(input('''Gostaria de jogar contra um Bot?
 '''))
 
 while True:
-
+    
     if layout[0][0] + layout[0][1] + layout[0][2] == 'XXX' or layout[0][0] + layout[1][0] + layout[2][0] == 'XXX':
         print('Jogador Xis ganhou')
         break
