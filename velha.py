@@ -1,6 +1,4 @@
 from random import randint
-from re import T
-from turtle import clear
 
 print('Jogo da Velha')
 
@@ -79,7 +77,7 @@ while True:
                     if ' ' in layout[l-1][c-1]:
                         layout[l-1][c-1] = jogador
                         tabela()
-                        print('\n\n\n')
+                        print('\n')
                         cont_jogador = 2
                         break
                     else:
