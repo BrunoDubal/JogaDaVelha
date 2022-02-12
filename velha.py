@@ -90,6 +90,7 @@ while True:
             jogador = 'O'
             try:
                 while True:
+                    print('Vez da maquina')
                     l = int(randint(0,2))
                     c = int(randint(0,2))
                     if ' ' in layout[l][c]:
